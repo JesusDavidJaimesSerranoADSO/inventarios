@@ -53,7 +53,7 @@
                 <a class="button is-primary is-rounded">
                     Mi cuenta
                 </a>
-                <a class="button is-link is-rounded">
+                <a href="" class="button is-link is-rounded" >
                     Salir
                 </a>
                 </div>

@@ -43,7 +43,7 @@
             $_SESSION['usuario'] = $check_user['usuario_usuario'];
 
             if(headers_sent()){
-                echo "<script>";
+                echo "<script>window.location.href='index.php?vista=home'</script>";
             }else{
                 header("index.php?vista=home");
             }
