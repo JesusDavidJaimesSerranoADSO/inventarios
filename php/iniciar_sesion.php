@@ -26,7 +26,7 @@
     if(verificar_datos("[a-zA-Z0-9$@.-]{7,100}",$clave)){
         echo'<div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
-        El nombre no coincide con los datos solicitados
+        la clave no coincide con los datos solicitados
         </div>';    
         exit();
     }
