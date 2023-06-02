@@ -7,7 +7,6 @@
     $apellido = limpiar_cadena($_POST["usuario_apellido"]);
     $usuario = limpiar_cadena($_POST["usuario_usuario"]);
     $email = limpiar_cadena($_POST["usuario_email"]);
-    $email = limpiar_cadena($_POST["usuario_email"]);
     $clave1 = limpiar_cadena($_POST["usuario_clave_1"]);
     $clave2 = limpiar_cadena($_POST["usuario_clave_2"]);
     
@@ -17,7 +16,7 @@
         echo'<div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
         No has llenado todos los campos que son obligatorios
-    </div>';
+        </div>';
         exit();
     }
     
@@ -48,7 +47,7 @@
         exit();
     }
 
-    if(!verificar_datos("[a-zA-Z0-9$@.-]{7,100}",$clave1) || !verificar_datos("[a-zA-Z0-9$@.-]{7,100}",$clave2)){
+    if(!verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave1) || !verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave2)){
         echo'<div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
         La clave no coincide con los datos solicitados

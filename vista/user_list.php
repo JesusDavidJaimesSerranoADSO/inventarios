@@ -14,19 +14,19 @@
             require_once("./php/usuario_eliminar.php");
         }
 
-            if(!isset($_GET['page'])){
+        if(!isset($_GET['page'])){
+            $pagina = 1;
+        }else{
+            $pagina = (int) $_GET['page'];
+            if($pagina <= 1){
                 $pagina = 1;
-            }else{
-                $pagina = (int) $_GET['page'];
-                if($pagina <= 1){
-                    $pagina = 1;
-                }
             }
+        }
 
-            $pagina = limpiar_cadena($pagina);
-            $url ="index.php?vista=user_list&page=";
-            $registro = 15;
-            $busqueda = "";
+        $pagina = limpiar_cadena($pagina);
+        $url ="index.php?vista=user_list&page=";
+        $registro = 1;
+        $busqueda = "";
 
         require_once("./php/usuario_lista.php");
     

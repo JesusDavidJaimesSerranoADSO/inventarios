@@ -65,7 +65,7 @@
         $registro = 15;
         $busqueda = $_SESSION['busqueda_usuario'];
 
-    require_once("./php/usuario_lista.php");
+        require_once("./php/usuario_lista.php");
 
     } ?>
     
