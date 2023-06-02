@@ -33,6 +33,6 @@
                 include("./vista/404.php");
             }
         }
-         ?>
+    ?>
 </body>
 </html>

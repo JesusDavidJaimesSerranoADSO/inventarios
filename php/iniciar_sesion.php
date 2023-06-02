@@ -60,7 +60,5 @@
         El usuario no coincide con los datos solicitados
         </div>';  
     }
-    $usuario = null;
-    $clave = null;
     $check_user = null;
 ?>
