@@ -1,4 +1,6 @@
-    <?php require_once("./inc/session_start.php");?>
+    <?php 
+    require_once("./inc/session_start.php");
+    ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -12,6 +14,13 @@
 
         if(is_file("./vista/".$_GET['vista'].".php" ) && $_GET['vista']!="login" && $_GET['vista']!="404"){
             
+            if((empty($_SESSION['id'])) || (empty($_SESSION['usuario']))){
+
+                // require("./vista/logout.php");
+                // exit();
+
+            }
+
             include("./inc/navbar.php");
             include("./vista/".$_GET['vista'].".php");
             include("./inc/script.php");
@@ -24,6 +33,6 @@
                 include("./vista/404.php");
             }
         }
-    // ?>
+         ?>
 </body>
 </html>
