@@ -184,7 +184,7 @@
         ":nombre" => $nombre,
         ":apellido" => $apellido,
         ":usuario" => $usuario,
-        ":clave" => $email,
+        ":clave" => $clave1,
         ":email" => $email,
         ":id" => $id
     ];
