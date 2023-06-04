@@ -23,7 +23,6 @@
             include("./inc/btn_back.php"); 
             $check_user=conexion();
             $check_user=  $check_user->query("SELECT * FROM usuario WHERE usuario_id = '$id'");
-
             if($check_user->rowCount() >0){
                 $datos=$check_user->fetch();
         ?>
@@ -46,7 +45,7 @@
             <div class="column">
                 <div class="control">
                     <label>Apellidos</label>
-                    <input class="input" type="text" value="<?php echo $datos['usuario_apellido']; ?>" name="usuario_nombre" name="usuario_apellido" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" required >
+                    <input class="input" type="text" value="<?php echo $datos['usuario_apellido']; ?>"name="usuario_apellido" pattern="[a-zA-ZáéíóúÁÉÍÓÚñÑ ]{3,40}" maxlength="40" required >
                 </div>
             </div>
         </div>
@@ -73,13 +72,13 @@
             <div class="column">
                 <div class="control">
                     <label>Clave</label>
-                    <input class="input" type="password" name="usuario_clave_1" pattern="[a-zA-Z0-9$@.-]{7,100}" maxlength="100" >
+                    <input class="input" type="password" name="usuario_clave_1" pattern="[a-zA-Z0-9$@.-]{4,100}" maxlength="100" >
                 </div>
             </div>
             <div class="column">
                 <div class="control">
                     <label>Repetir clave</label>
-                    <input class="input" type="password" name="usuario_clave_2" pattern="[a-zA-Z0-9$@.-]{7,100}" maxlength="100" >
+                    <input class="input" type="password" name="usuario_clave_2" pattern="[a-zA-Z0-9$@.-]{4,100}" maxlength="100" >
                 </div>
             </div>
         </div>
@@ -97,7 +96,7 @@
             <div class="column">
                 <div class="control">
                     <label>Clave</label>
-                    <input class="input" type="password" name="administrador_clave" pattern="[a-zA-Z0-9$@.-]{7,100}" maxlength="100" required >
+                    <input class="input" type="password" name="administrador_clave" pattern="[a-zA-Z0-9$@.-]{4,100}" maxlength="100" required >
                 </div>
             </div>
         </div>

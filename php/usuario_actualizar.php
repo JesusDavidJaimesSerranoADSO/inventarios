@@ -112,4 +112,93 @@
         exit();
     }
 
+    // verificar email
+
+    if($email!="" && $email != $datos['usuario_email']){
+        if(filter_var($email, FILTER_VALIDATE_EMAIL)){
+            $check_email = conexion();
+            $check_email = $check_email ->query("SELECT usuario_email FROM usuario WHERE usuario_email ='$email'");
+    
+            if($check_email->rowCount()> 0){
+                echo'<div class="notification is-danger is-light">
+                    <strong>¡Ocurrio un error inesperado!</strong><br>
+                    El email ya esta registrado
+                    </div>';    
+                    exit();
+
+            }
+            $check_email = null;
+        }else{
+            echo'<div class="notification is-danger is-light">
+            <strong>¡Ocurrio un error inesperado!</strong><br>
+            El email no coincide con los datos solicitados
+            </div>';    
+            exit();
+        }
+    }
+
+    // verificar usuario
+
+    if($usuario!="" && $usuario != $datos['usuario_usuario']){
+        $check_usuario = conexion();
+        $check_usuario = $check_usuario ->query("SELECT usuario_usuario FROM usuario WHERE usuario_usuario ='$usuuario'");
+
+        if($check_usuario->rowCount()> 0){
+            echo'<div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                El usuario ya esta registrado
+                </div>';    
+                exit();
+
+        }
+        $check_usuario = null;
+    }
+
+    if($clave1 != "" || $clave2!=""){
+        if(verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave1) || verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave2)){
+            echo'<div class="notification is-danger is-light">
+            <strong>¡Ocurrio un error inesperado!</strong><br>
+            Las claves no coincideo
+            </div>';    
+            exit();
+        }else{
+            if($clave1 != $clave2){
+                echo'<div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                La clave no coincide con los datos solicitados
+                </div>';    
+                exit();
+            }else{
+                $clave1 = password_hash($clave1,PASSWORD_BCRYPT,['cont' => 10]);
+            }
+        }
+    }else{
+        $clave1 = $datos['usuario_clave'];
+    }
+
+    // actualizar usuario 
+
+    $actualizar_usuario = conexion();
+    $actualizar_usuario = $actualizar_usuario -> prepare("UPDATE usuario SET usuario_nombre=:nombre, usuario_apellido=:apellido, usuario_usuario=:usuario, usuario_clave=:clave, usuario_email=:email WHERE usuario_id=:id");
+    $marcador = [
+        ":nombre" => $nombre,
+        ":apellido" => $apellido,
+        ":usuario" => $usuario,
+        ":clave" => $email,
+        ":email" => $email,
+        ":id" => $id
+    ];
+
+    if($actualizar_usuario->execute($marcador)){
+        echo'<div class="notification is-info is-light">
+        <strong>¡USUARIO REGISTRADO!</strong><br>
+        Registro realizado con exito
+        </div>'; 
+    }else{
+        echo'<div class="notification is-danger is-light">
+                <strong>¡Ocurrio un error inesperado!</strong><br>
+                No fue posible actualizarse 
+                </div>';
+    }
+    $actualizar_usuario=null
 ?>

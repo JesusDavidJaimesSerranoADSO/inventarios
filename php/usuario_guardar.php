@@ -47,7 +47,7 @@
         exit();
     }
 
-    if(!verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave1) || !verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave2)){
+    if(verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave1) || verificar_datos("[a-zA-Z0-9$@.-]{4,100}",$clave2)){
         echo'<div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
         La clave no coincide con los datos solicitados
