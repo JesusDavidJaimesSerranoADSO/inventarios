@@ -28,7 +28,7 @@
                     El termino de busqueda no coincide con el formato solicitado
                     </div>';
                 }else{
-                    $_SESSION[ $modulo_buscador]= $txt;
+                    $_SESSION[$modulo_buscador]= $txt;
                     header("Location: index.php?vista=$modulos_url",true,303);
                 }
             }
