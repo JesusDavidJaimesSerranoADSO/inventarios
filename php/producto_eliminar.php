@@ -1,6 +1,6 @@
 <?php 
 
-    $categoria = limpiar_cadena($_GET['producto_id_up']);
+    $categoria = limpiar_cadena($_GET['producto_id_del']);
 
     $check_producto = conexion();
     $check_producto =  $check_producto -> query("SELECT * FROM producto where producto_id = '$categoria'");

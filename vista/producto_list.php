@@ -19,7 +19,7 @@
 
         $categoria_id = (isset($_GET['categoria_id'])) ? $_GET['categoria_id'] : 0;
         $pagina = limpiar_cadena($pagina);
-        $url ="index.php?vista=product_list&page=";
+        $url ="index.php?vista=producto_list&page=";
         $registro = 15;
         $busqueda = "";
 

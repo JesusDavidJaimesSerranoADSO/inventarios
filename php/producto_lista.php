@@ -28,7 +28,7 @@
 
     $npaginas = ceil($total / $registro);
 
-    if($total >= 1 && $pagina >= $npaginas){
+    if($total >= 1 && $pagina <= $npaginas){
 
         $contador =  $inicio + 1;
         $pagina_inicio = $inicio + 1;
@@ -58,7 +58,7 @@
                 </p>
             </div>
             <div class="has-text-right">
-                <a href="index.php?vista=producto_image&producto_id_up='.$opcion['producto_id'].'" class="button is-link is-rounded is-small">Imagen</a>
+                <a href="index.php?vista=producto_img&producto_id_up='.$opcion['producto_id'].'" class="button is-link is-rounded is-small">Imagen</a>
                 <a href="index.php?vista=producto_update&producto_id_up='.$opcion['producto_id'].'" class="button is-success is-rounded is-small">Actualizar</a>
                 <a href="'.$url.$pagina.'&producto_id_up='.$opcion['producto_id'].'" class="button is-danger is-rounded is-small">Eliminar</a>
             </div>
@@ -89,7 +89,6 @@
     if($total >= 1 && $pagina <= $npaginas){
         $tabla.='<p class="has-text-right">Mostrando productos <strong>'.$pagina_inicio.'</strong> al <strong>'.$pagina_final.'</strong> de un <strong>total de '.$total.'</strong></p>';
     }
-
     echo $tabla;
     $conexion = null;
 

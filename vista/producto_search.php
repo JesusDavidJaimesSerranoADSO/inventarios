@@ -50,7 +50,7 @@
 
     <?php 
 
-        if(isset($_GET['producto_id_up'])){
+        if(isset($_GET['producto_id_del'])){
             require_once("./php/producto_eliminar.php");
         }
 
