@@ -43,9 +43,9 @@
             <strong>¡IMAGEN ELIMINADA!</strong><br>
             La imagen eliminada con exito
 
-            <p class="has-text-centered pt-5 pb-5">moda
+            <p class="has-text-centered pt-5 pb-5">
             <a href ="index.php?vista=producto_img&producto_id_up='.$id.'" class="button is-link is-rounded" >aceptar </a>
-        </p>
+            </p>
         </div>';
         exit();
 
@@ -54,7 +54,7 @@
             <strong>¡IMAGEN ELIMINADA!</strong><br>
             no se pudo actualizar, imagen imagen eliminada
 
-            <p class="has-text-centered pt-5 pb-5">moda
+            <p class="has-text-centered pt-5 pb-5">
                 <a href ="index.php?vista=producto_img&producto_id_up='.$id.'" class="button is-link is-rounded" >aceptar </a>
             </p>
         </div>';

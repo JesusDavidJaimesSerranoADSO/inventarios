@@ -4,10 +4,10 @@
 
     $producto_id = limpiar_cadena($_POST['img_up_id']);
     $img_dir = "../img/productos/";
-
+    
     $check_foto  = conexion();
     $check_foto = $check_foto ->query("SELECT * FROM producto WHERE producto_id ='$producto_id'");
-
+    
     if($check_foto -> rowCount() == 1){
         $datos = $check_foto -> fetch();
     }else{
@@ -17,7 +17,7 @@
         </div>';
         exit();
     }
-    $producto_id = null;
+    $check_foto = null;
     if($_FILES["producto_foto"]["name"] == "" || $_FILES["producto_foto"]["size"] == 0){
         echo'<div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -25,22 +25,22 @@
         </div>';
         exit();
     }
-
-
+    
+    
     if(!file_exists( $img_dir)){
         if(!chmod($img_dir,0777)){
             echo'<div class="notification is-danger is-light">
-        <strong>¡Ocurrio un error inesperado!</strong><br>
-        No se ha podido crear el directorio
-        </div>';
-        exit();
+            <strong>¡Ocurrio un error inesperado!</strong><br>
+            No se ha podido crear el directorio
+            </div>';
+            exit();
         }
         
     }
-
+    
     chmod($img_dir,0777);
-
-
+    
+    
     if(mime_content_type($_FILES["producto_foto"]["tmp_name"]) != "image/jpeg" && mime_content_type($_FILES["producto_foto"]["tmp_name"]) != "image/png"){
         echo'<div class="notification is-danger is-light">
         <strong>¡Ocurrio un error inesperado!</strong><br>
@@ -91,12 +91,16 @@
         ":id" => $producto_id
     ];
 
-    echo $foto;
+    
 
     if($actualizar_foto -> execute([":foto" => $foto, ":id" => $producto_id])){
         echo'<div class="notification is-info is-light">
         <strong>¡Producto registrado!</strong><br>
         Producto registrado con exicto
+
+        <p class="has-text-centered pt-5 pb-5">
+            <a href ="index.php?vista=producto_img&producto_id_up='.$producto_id.'" class="button is-link is-rounded" >aceptar </a>
+            </p>
         </div>';
 
     }else{

@@ -42,7 +42,7 @@
             <?php }else{ ?>
             
             <figure class="image mb-6">
-                <img src="./img/producto.png" alt="code">
+                <img src="./img/productos/default.jpg" alt="code">
             </figure>
             <?php } ?>
             

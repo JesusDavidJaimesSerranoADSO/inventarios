@@ -60,7 +60,7 @@
             <div class="has-text-right">
                 <a href="index.php?vista=producto_img&producto_id_up='.$opcion['producto_id'].'" class="button is-link is-rounded is-small">Imagen</a>
                 <a href="index.php?vista=producto_update&producto_id_up='.$opcion['producto_id'].'" class="button is-success is-rounded is-small">Actualizar</a>
-                <a href="'.$url.$pagina.'&producto_id_up='.$opcion['producto_id'].'" class="button is-danger is-rounded is-small">Eliminar</a>
+                <a href="'.$url.$pagina.'&producto_id_del='.$opcion['producto_id'].'" class="button is-danger is-rounded is-small">Eliminar</a>
             </div>
         </div>
     </article>
