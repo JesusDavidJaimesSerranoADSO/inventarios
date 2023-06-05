@@ -21,12 +21,14 @@
                 <strong>¡Ocurrio un error inesperado!</strong><br>
                 La categoria eliminada con exito
                 </div>';
+                exit();
 
             }else{
                 echo'<div class="notification is-danger is-light">
                 <strong>¡Ocurrio un error inesperado!</strong><br>
                 La categoria no se puede eliminar
                 </div>';
+                exit();
             }
 
             $eliminar_categoria = null;

@@ -45,7 +45,7 @@
                     <td>'.$row['categoria_nombre'].'</td>
                     <td>'.substr($row['categoria_ubicacio'],0,25).'</td>
                     <td>
-                        <a href="index.php?vista=product_category&category_id='.$row['categoria_id'].'" class="button is-link is-rounded is-small">Ver productos</a>
+                        <a href="index.php?vista=producto_category&category_id='.$row['categoria_id'].'" class="button is-link is-rounded is-small">Ver productos</a>
                     </td>
                     <td>
                         <a href="index.php?vista=category_update&category_id_up='.$row['categoria_id'].'" class="button is-success is-rounded is-small">Actualizar</a>

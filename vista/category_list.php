@@ -22,6 +22,7 @@
             }
         }
 
+       
         $pagina = limpiar_cadena($pagina);
         $url ="index.php?vista=category_list&page=";
         $registro = 15;

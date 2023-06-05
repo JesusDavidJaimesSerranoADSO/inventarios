@@ -6,7 +6,7 @@
         $modulos_url=[
             "usuario"=>"user_search",
             "categoria"=>"category_search",
-            "producto"=>"product_search"
+            "producto"=>"producto_search"
         ];
 
         $modulos_url=$modulos_url[$modulo_buscador];

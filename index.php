@@ -16,8 +16,8 @@
             
             if((empty($_SESSION['id'])) || (empty($_SESSION['usuario']))){
 
-                // require("./vista/logout.php");
-                // exit();
+                require("./vista/logout.php");
+                exit();
 
             }
 
